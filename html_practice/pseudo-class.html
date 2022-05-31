@@ -1,0 +1,32 @@
+<!-- What are Pseudo-classes?
+A pseudo-class is used to define a special state of an element.
+
+For example, it can be used to:
+
+Style an element when a user mouses over it
+Style visited and unvisited links differently
+Style an element when it gets focus -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      a.highlight:hover {
+        color: #ff0000;
+        font-size: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Pseudo-classes and HTML Classes</h2>
+
+    <p>
+      When you hover over the first link below, it will change color and font
+      size:
+    </p>
+
+    <p><a class="highlight" href="css_syntax.asp">CSS Syntax</a></p>
+
+    <p><a href="default.asp">CSS Tutorial</a></p>
+  </body>
+</html>

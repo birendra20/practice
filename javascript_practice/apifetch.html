@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="data"></div>
+  </body>
+</html>
+
+<script>
+  let datDiv = document.getElementById("data");
+  async function data() {
+    let url = "https://randomuser.me/api";
+    try {
+      let response = await fetch(url);
+      let data = await response.json();
+      showData(data.results);
+      console.log("data:", data);
+    } catch (e) {
+      console.log("err:", e);
+    }
+
+    // expected output: "resolved"
+  }
+  data();
+
+  function showData(data) {
+    data.forEach(function (a) {
+      let gender = document.createElement("p");
+      gender.innerText = `gender-${a.gender}`;
+
+      // let name = document.createElement("p");
+      // name.innerText = `name-${a.name.title}`;
+
+      let first = document.createElement("p");
+      first.innerText = `firstName- ${a.name.title} ${a.name.first}`;
+
+      let last = document.createElement("p");
+      last.innerText = `LastNAme-${a.name.last}`;
+
+      let address = document.createElement("h3");
+      address.innerText = `address`;
+
+      let street = document.createElement("p");
+      street.innerText = `street-${a.login.number}`;
+
+      let streetName = document.createElement("p");
+      streetName.innerText = `streetName-${a.login.name}`;
+
+      let state = document.createElement("p");
+      state.innerText = `state-${a.location.state}`;
+
+      let country = document.createElement("p");
+      country.innerText = `country-${a.location.country}`;
+
+      let city = document.createElement("p");
+      city.innerText = `city-${a.location.city}`;
+
+      let postcode = document.createElement("p");
+      postcode.innerText = `postcode-${a.location.postcode}`;
+
+      let coordinates = document.createElement("h3");
+      coordinates.innerText = `coordinates`;
+
+      let latitude = document.createElement("p");
+      latitude.innerText = `latitude-${a.location.coordinates.latitude}`;
+
+      let longitude = document.createElement("p");
+      longitude.innerText = `longitude-${a.location.timezone.longitude}`;
+
+      let timezone = document.createElement("h3");
+      timezone.innerText = `Timezone`;
+
+      let offset = document.createElement("p");
+      offset.innerText = `offset-${a.location.timezone.offset}`;
+
+      let description = document.createElement("p");
+      description.innerText = `description-${a.location.timezone.description}`;
+
+      let email = document.createElement("h4");
+      email.innerText = `Email-${a.email}`;
+
+      // let title = document.createElement("p");
+      // title.innerText = `title-${data.results.number}`;
+
+      let login = document.createElement("h3");
+      address.innerText = `login `;
+
+      let uuid = document.createElement("p");
+      uuid.innerText = `uuid-${a.login.uuid}`;
+
+      let username = document.createElement("p");
+      username.innerText = `username-${a.login.username}`;
+
+      let password = document.createElement("p");
+      password.innerText = `password-${a.login.password}`;
+
+      let salt = document.createElement("p");
+      salt.innerText = `salt-${a.login.salt}`;
+
+      let Picture = document.createElement("h3");
+      Picture.innerText = `Picture `;
+
+      let large = document.createElement("IMG");
+      large.src = `${a.picture.large}`;
+
+      let medium = document.createElement("img");
+      medium.src = `${a.picture.medium}`;
+
+      let thumbnail = document.createElement("img");
+      thumbnail.src = `${a.picture.thumbnail}`;
+
+      datDiv.append(
+        gender,
+        // name,
+        first,
+        last,
+        address,
+        street,
+        streetName,
+        city,
+        state,
+        country,
+        postcode,
+        coordinates,
+        latitude,
+        longitude,
+        timezone,
+        offset,
+        description,
+        email,
+        login,
+        uuid,
+        username,
+        password,
+        salt,
+        Picture,
+        large,
+        medium,
+        thumbnail
+      );
+    });
+  }
+</script>
+
+<!-- {"results":[{"gender":"male","name":{"title":"Mr","first":"Jayden","last":"Addy"},"location":{"street":{"number":2719,"name":"St.
+Lawrence
+Ave"},"city":"Campbellton","state":"Nunavut","country":"Canada","postcode":"T9A
+8T9","coordinates":{"latitude":"-65.7970","longitude":"-139.5557"},"timezone":{"offset":"+5:00","description":"Ekaterinburg,
+Islamabad, Karachi,
+Tashkent"}},"email":"jayden.addy@example.com","login":{"uuid":"70a4d187-410a-46c5-8946-f92facf2be2c","username":"crazykoala962","password":"mississi","salt":"qhcNyVuW","md5":"7b3ed286bce632837f5c3f08cc2571db","sha1":"07b802a1177e080363f1afb31913ca4f91fad5fa","sha256":"9fdc8b3e3c73b7e77e7ea5fef5b4ce31d1c1cb0b90cdfdeefa131888e5db9464"},"dob":{"date":"1976-05-02T18:06:35.931Z","age":46},"registered":{"date":"2005-03-24T04:05:19.882Z","age":17},"phone":"679-179-1706","cell":"162-561-4578","id":{"name":"","value":null},"picture":{"large":"https://randomuser.me/api/portraits/men/95.jpg","medium":"https://randomuser.me/api/portraits/med/men/95.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/95.jpg"},"nat":"CA"}],"info":{"seed":"ab2e73c5cb09fcbe","results":1,"page":1,"version":"1.3"}} -->

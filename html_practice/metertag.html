@@ -1,0 +1,21 @@
+Meter Tag Indicates a numeric value that falls within a range. The tag supports
+a number of attributes: value: If you don't specify a value, the first numeric
+value inside the <meter></meter> pair becomes the value.
+.............................................................................................
+<br />
+max: The maximum possible value of the item.<br />
+min: The minimum possible value of the item.<br />
+high: If the value can be defined as a range, this is the high end of the range.
+<br />
+low: If the value can defined as a range, this is the low end of that range.
+optimum: The optimal value of the element.
+<br />
+................................................................................................
+<p>Disk Usage: <meter value="0.2">20%</meter></p>
+
+<p>Total Score: <meter value="6" min="0" max="10">6 out of 10</meter></p>
+
+<p>
+  Pollution Level:
+  <meter low="60" high="80" max="100" value="85">Very High</meter>
+</p>
