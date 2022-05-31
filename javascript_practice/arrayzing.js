@@ -143,3 +143,67 @@
 // var allTheMeals = dayTimeMeals.concat(nightTimeMeals);
 // console.log(allTheMeals);
 // ['breakfast', 'lunch', 'merienda', 'dinner']
+
+// //....................................................
+// Copy specific item(s)
+// var meals = ["breakfast", "lunch", "dinner", "supper"];
+
+// nightTimeMeals = meals.slice(2, 4);
+// console.log(nightTimeMeals);
+// // ['dinner', 'supper']
+
+//..........................................................
+//Augment items within an array
+// var meals = ["breakfast", "lunch", "dinner"];
+// var type = ["king", "prince", "pauper"];
+
+// meals.map(function (item, i) {
+//   return item + " like a " + type[i];
+// });
+// // ["breakfast like a king", "lunch like a prince", "dinner like a pauper"]
+
+////////////////////////////////////////////////////
+//Return true if every item meets a condition
+// var meals = ["breakfast", "lunch", "dinner", "supper"];
+
+// meals.every(function (item) {
+//   return item.length > 0;
+// });
+// // true
+
+// meals.every(function (item) {
+//   return item.length > 6;
+// });
+// // false
+
+////////////////////////////////////////////////////////
+//Return true if at least one item matches a condition
+// var meals = ["breakfast", "lunch", "dinner", "supper"];
+
+// meals.some(function (item) {
+//   return item === "lunch";
+// });
+// // true
+
+// meals.some(function (item) {
+//   return item === "burgers!!";
+// });
+// //false
+
+///////////////////////////////////////////////////////////////
+//Execute a function once per array item
+// var meals = ["breakfast", "lunch", "dinner", "supper"];
+
+// meals.forEach(function (currentValue, index, arr) {
+//   console.log(index, currentValue, arr);
+// });
+
+///////////////////////////////////////////////////////////
+
+// Filter an array
+// var meals = ['breakfast', 'lunch', 'dinner', 'supper'];
+
+// meals.filter(function(item) {
+//   return item !== 'breakfast';
+// });
+// // ['lunch', 'dinner', 'supper'];
