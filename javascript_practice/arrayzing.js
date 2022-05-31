@@ -136,3 +136,10 @@
 // [794,1438,2585,2605,3947,6241,11745]
 
 //......................................................
+// Join two arrays together
+// var dayTimeMeals = ["breakfast", "lunch"];
+// var nightTimeMeals = ["merienda", "dinner"];
+
+// var allTheMeals = dayTimeMeals.concat(nightTimeMeals);
+// console.log(allTheMeals);
+// ['breakfast', 'lunch', 'merienda', 'dinner']
