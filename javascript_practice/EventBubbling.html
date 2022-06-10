@@ -21,23 +21,15 @@
     <script>
       var parent = document.querySelector("#parent");
       // <!-- Add click event on parent div -->
-      parent.addEventListener(
-        "click",
-        function () {
-          console.log("Parent clicked");
-        },
-        true
-      );
+      parent.addEventListener("click", function () {
+        console.log("Parent clicked");
+      });
 
       var child = document.querySelector("#child");
       // <!-- Add click event on child button -->
-      child.addEventListener(
-        "click",
-        function () {
-          console.log("Child clicked");
-        },
-        true
-      );
+      child.addEventListener("click", function () {
+        console.log("Child clicked");
+      });
     </script>
   </body>
 </html>

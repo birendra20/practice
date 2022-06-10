@@ -1,6 +1,13 @@
-// a closure is a combination of a function with reference to its surrounding state.
+// a closure is a combination of a function bundled together with reference to its surrounding state(lexical environment).
 //in simple word closures gives you access to outer function scope from inner function
 // in js , closers are created everytime a function is created,at function creation time.
+
+//the closer has three scope chains
+//1)it has access to its own scope
+//it has access to its outer functions variables
+//it has access to the global variables
+
+//and the inner function has access not only to its outer function's variable but it has also access to outer's function parameters
 
 ///////////////////////////////////////////////////////////////////////////
 

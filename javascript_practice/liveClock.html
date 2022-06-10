@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Clock</title>
+  </head>
+  <body>
+    <div id="clock"></div>
+  </body>
+</html>
+
+<script>
+  function displayClock() {
+    let time = new Date();
+    let hrs = time.getHours();
+    let min = time.getMinutes();
+    let sec = time.getSeconds();
+    let x = " AM";
+
+    if (hrs > 12) {
+      x = " PM";
+    }
+
+    if (hrs > 12) {
+      hrs = hrs - 12;
+    }
+
+    if (hrs == 0) {
+      hrs = 12;
+    }
+
+    if (hrs < 10) {
+      hrs = "0" + hrs;
+    }
+    if (min < 10) {
+      min = "0" + min;
+    }
+    if (sec < 10) {
+      sec = "0" + sec;
+    }
+
+    document.getElementById("clock").innerHTML =
+      hrs + ":" + min + ":" + sec + x;
+  }
+
+  setInterval(displayClock, 1000);
+</script>
