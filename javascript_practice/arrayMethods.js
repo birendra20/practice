@@ -53,3 +53,32 @@
 //   return person.age >= 18;
 // });
 // console.log(adult);
+
+//////////////////////////////////////////////////////////////////////////
+
+//reduce
+
+// const number = [1, 2, 3, 4, 5];
+
+// let sum = number.reduce((acc, value) => {
+//   return acc + value;
+// }, 10);
+
+// console.log(sum);
+
+////////////////////////////////////////////////////////////////
+
+// //slice
+// const numbers = [1, 2, 3, 4, 5, 6];
+
+// const copiedNumbers = numbers.slice(0);
+// const first3 = numbers.slice(0, 3);
+// const last3 = numbers.slice(-3);
+// const mid = numbers.splice(1, 2);
+
+// console.log(copiedNumbers);
+// console.log(numbers);
+// console.log(first3);
+// console.log(last3);
+// console.log(mid);
+// console.clear();
