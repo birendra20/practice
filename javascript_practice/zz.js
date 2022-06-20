@@ -235,6 +235,37 @@
 //};
 //283. Move Zeroes
 
+// var moveZeroes = function(nums) {
+
+//     if(nums.length==0 || nums.length==1)
+//         return;
+
+//     let left =0;
+//     let right=0;
+//     let temp;
+//     while(right<nums.length) {
+//         if(nums[right] ==0) {
+//             right++;
+//         }
+//         else {
+//             // temp = nums[right];
+//             // nums[right]=nums[left]
+//             // nums[left]=temp;
+
+//             swap(nums,left,right)
+//             left++
+//             right++
+
+//         }
+
+//     }
+//     };
+//      function swap(arr,element1, element2){
+//          return [arr[element1], arr[element2]] = [arr[element2], arr[element1]];
+
+//      }
+//     //283. Move Zeroes
+
 //****************************************************************************************************************** */
 // A divide-and-conquer algorithm recursively breaks down a problem into two or more sub-problems of the same or related type,
 //until these become simple enough to be solved directly.
@@ -256,4 +287,135 @@
 //Finally, the algorithm recursively sorts the subarrays on the left and right of the pivot element.
 
 // Merge Sort is also a sorting algorithm.
-//The algorithm divides the array into two halves, recursively sorts them, and finally merges the two sorted halve
+//The algorithm divides the array into two halves, recursively sorts them, and finally merges the two sorted halve;
+
+//********************************************************************************************** */
+// var twoSum = function(nums, target) {
+//     result =[];
+//      for(i = 0;i<nums.length;i++){
+//           for(j = i+1;j<nums.length;j++){
+//               if(target==nums[i]+nums[j]){
+//                   //return[i,j];
+//                   result.push(i,j)
+//               }
+
+//           }
+//      }
+//  return result;
+//  };
+
+//**************************************************************************************************** */
+
+// JavaScript is a dynamic programming language that's used for web development, in web applications, for game development,
+//and lots more. It allows you to implement dynamic features on web pages that cannot be done with only HTML and CSS.
+//supports Math calculations, allows you to dynamically add HTML contents to the DOM, creates dynamic style declarations,
+//fetches contents from another website, and lots more.
+
+//************************************************************************************************************* */
+
+// Searching Algorithms are designed to check for an element or retrieve an element from any data structure where it is stored.
+//Based on the type of search operation, these algorithms are generally classified into two categories:
+
+// Sequential Search: In this, the list or array is traversed sequentially and every element is checked. For example: Linear Search.
+
+// Interval Search: These algorithms are specifically designed for searching in sorted data-structures.
+// These type of searching algorithms are much more efficient than Linear Search as they repeatedly target the center of the search structure
+// and divide the search space in half. For Example: Binary Search.
+
+// LINEAR SEARCH
+
+// Assume that item is in an array in random order and we have to find an item.
+//Then the only way to search for a target item is, to begin with, the first position and compare it to the target.
+//If the item is at the same, we will return the position of the current item. Otherwise, we will move to the next position.
+// If we arrive at the last position of an array and still can not find the target, we return -1.
+//This is called the Linear search or Sequential search.
+
+// Below is the code syntax for the linear search.
+
+// let arr = [1, 2, 5, 6, 5, 8, 8, 4, 7, 4];
+
+// function linearSearch(arr, k) {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] == k) {
+//       return i;
+//     }
+//   }
+// }
+// console.log(linearSearch(arr, 8));
+//**************************************************************************** */
+//BINARY SEARCH
+
+// In a binary search, however, cut down your search to half as soon as you find the middle of a sorted list.
+//The middle element is looked at to check if it is greater than or less than the value to be searched.
+// Accordingly, a search is done to either half of the given list
+
+// Below is the code syntax for the binary search.
+
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// function binaryS(arr, k) {
+//   let start = 0;
+//   end = arr.length - 1;
+//   while (start <= end) {
+//     var mid = start + Math.floor((end - start) / 2);
+//     if (k == arr[mid]) {
+//       return mid;
+//     } else if (k < arr[mid]) {
+//       end = mid - 1;
+//     } else {
+//       start = mid + 1;
+//     }
+//   }
+
+//   return -1;
+// }
+// console.log(binaryS(arr, 10));
+//************************************************************************************* */
+
+// const arr = [11, 2, 44, 7, 7, 6, 25, 19, 47, 10, 47, 45, 45];
+
+// function SecondLargestNumber(arr) {
+//   let largest = -Infinity;
+//   let secondLarge = -Infinity;
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > largest) {
+//       secondLarge = largest;
+//       largest = arr[i];
+//     } else if (arr[i] > secondLarge) {
+//       secondLarge = arr[i];
+//     }
+//   }
+//   return secondLarge;
+// }
+
+// console.log(SecondLargestNumber(arr));
+
+// arr.sort(function (a, b) {
+//   return a - b;
+// });
+
+// let unq = [...new Set(arr)];
+// console.log(unq[unq.length - 2]);
+// // console.log(arr);
+// // console.log(arr[arr.length - 2]);
+
+//***************************************************************************** */
+let arr = [0, 1, 0, 3, 12];
+
+var moveZeroes = function (arr) {
+  let zeros = [];
+  let nonZeros = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == 0) {
+      zeros.push(arr[i]);
+    } else {
+      nonZeros.push(arr[i]);
+    }
+  }
+  let newArr = [...nonZeros, ...zeros];
+  //let newArr = nonZeros.concat(zeros);
+  return newArr;
+};
+console.log(moveZeroes(arr));
