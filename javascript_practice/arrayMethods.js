@@ -101,3 +101,35 @@
 // console.log(c);
 
 /////////////////////////////////////////////////////////////////
+//fill
+
+// const numbers = [1, 2, 3, 4, 5, 6, 4];
+// numbers.fill(0, 1, 5);
+// console.log(numbers);
+
+///////////////////////////////////////////////////////////////
+// //includes
+// const str = ["a", "d"];
+// console.log(str.includes("a"));
+
+//=============================================================
+
+//indexof
+
+// let arr = [25, 56, 4, 565, 6, 5, 5, 5, 2, 55, 4, 1, 5];
+// console.log(arr.indexOf(5));//return 1st index
+
+//lastindexof
+
+// let arr = [25, 56, 4, 565, 6, 5, 5, 5, 2, 55, 4, 1, 5];
+// console.log(arr.lastIndexOf(5)); //return last index
+
+//==============================================================
+//every
+let arr = [25, 56, 4, 565, 6, 5, 5, 5, 2, 55, 4, 1, 5];
+
+let res = arr.every((item) => {
+  return item > 0;
+});
+
+console.log(res);
