@@ -401,21 +401,29 @@
 // // console.log(arr[arr.length - 2]);
 
 //***************************************************************************** */
-let arr = [0, 1, 0, 3, 12];
+// let arr = [0, 1, 0, 3, 12];
 
-var moveZeroes = function (arr) {
-  let zeros = [];
-  let nonZeros = [];
+// var moveZeroes = function (arr) {
+//   let zeros = [];
+//   et nonZeros = [];
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] == 0) {
-      zeros.push(arr[i]);
-    } else {
-      nonZeros.push(arr[i]);
-    }
-  }
-  let newArr = [...nonZeros, ...zeros];
-  //let newArr = nonZeros.concat(zeros);
-  return newArr;
-};
-console.log(moveZeroes(arr));
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] == 0) {
+//       zeros.push(arr[i]);
+//     } else {
+//       nonZeros.push(arr[i]);
+//     }
+//   }
+//   let newArr = [...nonZeros, ...zeros];
+//   //let newArr = nonZeros.concat(zeros);
+//   return newArr;
+// };
+// console.log(moveZeroes(arr));l
+
+// let x = "10";
+// let y = +x;
+
+// console.log(typeof y);
+let arr = ["a", "b"];
+let res = arr.shift();
+console.log(res);
