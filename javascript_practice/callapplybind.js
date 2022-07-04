@@ -1,12 +1,10 @@
 //>>call:
-// call method is use to invoke a function directly,by passing in the Reference which points to this variable inside the method.
+// call method is use to invoke a function directly,by passing in the Reference which points to this variable ,
+//inside the method.
 
 //>>apply:
-//apply is exactly as same as call method, the only difference is it takes the second argument as ,array list of the parameter which needs
-//to passed to the function. 
-
-
-
+//apply is exactly as same as call method, the only difference is it takes the second argument as ,
+//array list of the parameter which needs to passed to the function.
 
 let name = {
   firstName: "birendra",

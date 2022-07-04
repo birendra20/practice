@@ -17,7 +17,7 @@
 //   return item * 2;
 // });
 
-// console.log(double);
+// console.log(double);//[ 2, 4, 6, 8, 10 ]
 
 // let product = [
 //   { name: "product1", price: 25, qty: 1 },
@@ -31,6 +31,13 @@
 //   totalValue: item.price * item.qty,
 // }));
 // console.log(totalPrice);
+//output
+// [
+//     { name: 'product1', totalValue: 25 },
+//     { name: 'product2', totalValue: 120 },
+//     { name: 'product3', totalValue: 70 },
+//     { name: 'product4', totalValue: 45 }
+//   ]
 //==============================================================================================
 
 //filter
@@ -69,6 +76,13 @@
 ////////////////////////////////////////////////////////////////
 
 // //slice
+
+// The slice() method returns selected elements in an array, as a new array.
+
+// The slice() method selects from a given start, up to a (not inclusive) given end.
+
+// The slice() method does not change the original array.
+
 // const numbers = [1, 2, 3, 4, 5, 6];
 
 // const copiedNumbers = numbers.slice(0);
@@ -76,9 +90,10 @@
 // const last3 = numbers.slice(-3);
 // const mid = numbers.splice(1, 2);
 
-// console.log(copiedNumbers);
+// console.log(copiedNumbers);//[ 1, 2, 3, 4, 5, 6 ]
 // console.log(numbers);
-// console.log(first3);
+// console.log(first3);//[ 1, 2, 3 ]
+
 // console.log(last3);
 // console.log(mid);
 // console.clear();
@@ -86,6 +101,10 @@
 //===========================================================================================================
 
 //splice
+
+// splice() JS Array Method. The splice() method is a built-in method for JavaScript Array objects.
+// It lets you change the content of your array by removing or replacing existing elements with new ones.
+//  This method modifies the original array and returns the removed elements as a new array
 
 // const numbers = [1, 2, 3, 4, 5];
 
@@ -103,9 +122,11 @@
 /////////////////////////////////////////////////////////////////
 //fill
 
-// const numbers = [1, 2, 3, 4, 5, 6, 4];
-// numbers.fill(0, 1, 5);
-// console.log(numbers);
+const numbers = [1, 2, 3, 4, 5, 6, 4];
+numbers.fill(0, 1, 5);
+console.log(numbers);
+//output
+// [1, 0, 0, 0, 0, 6, 4];
 
 ///////////////////////////////////////////////////////////////
 // //includes

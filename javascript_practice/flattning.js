@@ -18,16 +18,3 @@ const array = [1, 2, 3, [4, 5, 6], 7, 8, [9, 10, 11]];
 //   return newArr;
 // };
 // console.log(flatten(array));
-
-const faltten = (arr) => {
-  let newArr = arr.reduce((acc, item) => {
-    //if the item is array
-    if (Array.isArray(item)) {
-      acc = acc.concat(faltten(item));
-    } else {
-      acc.push(item);
-    }
-    return acc;
-  }, []);
-  return newArr;
-};
