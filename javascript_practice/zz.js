@@ -61,7 +61,7 @@
 // }
 
 //***************************************************************************************************** */
-//number of duplicates in an array
+// number of duplicates in an array
 // arr = [
 //   "a",
 //   "b",
@@ -424,6 +424,35 @@
 // let y = +x;
 
 // console.log(typeof y);
-let arr = ["a", "b"];
-let res = arr.shift();
-console.log(res);
+// let arr = ["a", "b"];
+// let res = arr.shift();
+// console.log(res);
+//..........................................................................
+let nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
+// let newArr = [];
+
+// for (let i = 0; i < nums.length; i++) {
+//   if (nums[i] !== nums[i + 1]) {
+//     newArr.push(nums[i]);
+//   }
+// }
+// console.log(newArr);
+// function removeDup(nums) {
+//   let i = 0;
+//   let j = 1;
+
+//   while (j < nums.length) {
+//     if (nums[i] === nums[j]) {
+//       nums.splice(j, 1);
+//       // no need to increment here since an item has been removed from the array it will shift over
+//     } else {
+//       i++;
+//       j++;
+//     }
+//   }
+//   return nums;
+// }
+// console.log(removeDup(nums));
+
+// let unique = [...new Set(nums)];
+// console.log(unique);
