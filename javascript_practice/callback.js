@@ -16,3 +16,6 @@ function operationSum(num1, num2, operation) {
 
 operationSum(4, 10, divideByHalf);
 operationSum(4, 10, double);
+
+// 7
+// 28

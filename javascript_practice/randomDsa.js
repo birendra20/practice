@@ -428,7 +428,7 @@
 // let res = arr.shift();
 // console.log(res);
 //..........................................................................
-let nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
+//let nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
 // let newArr = [];
 
 // for (let i = 0; i < nums.length; i++) {
@@ -456,3 +456,41 @@ let nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
 
 // let unique = [...new Set(nums)];
 // console.log(unique);
+
+//...................................................
+
+// One of the best and most performant shuffling algorithms is the "Fisher-Yates Shuffle" algorithm it's way better than we used the sorting trick to shuffle for like array.sort((a, b) => 0.5 - Math.random()).
+
+// This works for a rough-and-ready approach but might not give you a truly random shuffle so clearly, Fisher-Yates Shuffle is the better choice for a couple of good reasons:
+
+// 1 - It’s unbiased
+
+// 2 - It uses constant, or O(1) space, because it performs its swaps in
+// place
+
+// 3 - It uses linear, or O(N) time, because it only needs to shuffle each item in the set once.
+
+// 4 - It's so easy to understand.
+
+// Even the loadash function "Shuffle" uses Fisher-Yates Shuffle under the hood.
+
+let array = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"];
+
+const fisherYatesShuffle = (array = []) => {
+  if (array.length <= 1) return array;
+
+  let i = array.length - 1;
+  while (i > 0) {
+    //random number of length i
+
+    const random = Math.floor(Math.random() * (i + 1));
+    //swapping the random number with i
+
+    [array[i], array[random]] = [array[random], array[i]];
+    i--;
+  }
+  return array;
+};
+
+console.log(fisherYatesShuffle(array));
+["I", "K", "E", "H", "F", "A", "D", "J", "G", "B", "C"];

@@ -19,17 +19,17 @@
     console.log(x.value + " " + count++);
   };
 
-  // const debounce = function (fn, d) {
-  //   let timer;
-  //   return function () {
-  //     let context = this;
-  //     //args = arguments;
-  //     clearInterval(timer);
-  //     timer = setTimeout(() => {
-  //       getData.apply(context);
-  //     }, d);
-  //   };
-  // };
+  const debounce = function (fn, d) {
+    let timer;
+    return function () {
+      let context = this;
+      //args = arguments;
+      clearInterval(timer);
+      timer = setTimeout(() => {
+        getData.apply(context);
+      }, d);
+    };
+  };
 
-  // const betterFunction = debounce(getData, 500);
+  const betterFunction = debounce(getData, 500);
 </script>

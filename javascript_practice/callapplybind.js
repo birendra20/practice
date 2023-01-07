@@ -25,3 +25,7 @@ printFullName.apply(name, ["goa"]);
 
 let print = printFullName.bind(name, "jharkhand");
 print();
+
+//birendra gupta from maharashtra
+//birendra gupta from goa
+//birendra gupta from jharkhand
