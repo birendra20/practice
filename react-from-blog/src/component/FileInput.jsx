@@ -22,6 +22,7 @@ const FileInput = () => {
     <div>
       <input ref={inputRef} type="file" onChange={handleFileChange} />
       <button onClick={handleFileInput}>Reset file Input</button>
+      <hr />
     </div>
   );
 };
