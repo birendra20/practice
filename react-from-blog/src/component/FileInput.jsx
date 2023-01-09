@@ -15,7 +15,7 @@ const FileInput = () => {
   // reset the file input
 
   const handleFileInput = (e) => {
-    inputRef.current.value = null;
+    inputRef.current.value = "";
   };
 
   return (
