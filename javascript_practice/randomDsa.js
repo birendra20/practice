@@ -493,4 +493,4 @@ const fisherYatesShuffle = (array = []) => {
 };
 
 console.log(fisherYatesShuffle(array));
-["I", "K", "E", "H", "F", "A", "D", "J", "G", "B", "C"];
+//["I", "K", "E", "H", "F", "A", "D", "J", "G", "B", "C"];
