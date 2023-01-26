@@ -86,6 +86,7 @@ unsubscribe();
 //which is a function that can be called to unsubscribe the function and stop calling it when an action is dispatched.
 
 // The store.dispatch(buyCake()) method is used to dispatch the action object returned by the buyCake() function to the store,
-//triggering the execution of the reducer function and updating the state of the application. Each time this method is called, the state is updated and the subscribed callback function is called.
+//triggering the execution of the reducer function and updating the state of the application.
+//Each time this method is called, the state is updated and the subscribed callback function is called.
 
 // Finally, unsubscribe() method is called to stop the callback function from being called when an action is dispatched.
