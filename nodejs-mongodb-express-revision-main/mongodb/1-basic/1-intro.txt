@@ -1,0 +1,70 @@
+
+Introduction to MongoDB
+-----------------------
+
+
+MongoDB is a document database designed for ease of development and scaling . It is one of the most powerful
+NoSQL system and database . Being a NoSQL means that it does not use the usual rows and columns . This
+database uses a document storage format called BSON which is a binary style of JSON documents .
+
+Example :
+{
+_id : ObjectId ( " 6abs665jhsj7 " ) ,
+name : " Sonam " ,
+age : 27 ,
+hobbies : [ ' Dancing ' , ' Reading " ] ,
+city : " Ranchi " ,
+isLogin : true
+}
+
+MySQL       |  MongoDB
+Database    |  Database
+Table       |  Collection
+Row         |  Document
+Column      |  Field
+
+
+**********************************************************************************************************************
+
+
+MongoDB
+-------
+
+
+Database - In MongoDB , databases hold one or more collections .
+
+Collection - MongoDB stores documents in collections . Collections are analogous to tables in relational databases .
+
+Document - A document is a set of key - value pairs . The documents in a single collection do not need to have the
+same set of fields and the data type for a field can differ across documents within a collection .
+
+
+
+MongoDB Deployment Options
+--------------------------
+
+
+• Locally Hosted Deployments
+  • MongoDB Community (free)
+  • MongoDB Enterprise Advance (paid)
+
+• Cloud Hosted Deployment
+  • MongoDB Atlas
+
+
+MongoDB Terms
+-------------
+
+mongo - mongo is the command - line shell that connects to a specific instance of mongod . When you run mongo
+with no parameters it defaults to connecting to the localhost on port 27017 .
+
+mongod - mongod is the primary daemon process for the MongoDB system . It handles data requests , manages
+data access , and performs background management operations .
+
+mongos - For a sharded cluster , the mongos instances provide the interface between the client applications and
+the sharded cluster . The mongos instances route queries and write operations to the shards . From the perspective
+of the application , a mongos instance behaves identically to any other MongoDB instance .
+
+mongosh - The MongoDB Shell , mongosh , is a fully functional JavaScript and Node.js 14.x REPL environment
+for interacting with MongoDB deployments . You can use the MongoDB Shell to test queries and operations
+directly with your database .

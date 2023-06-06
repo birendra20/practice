@@ -1,5 +1,6 @@
 //>>call:
-// call method is use to invoke a function directly,by passing in the Reference which points to this variable ,
+// call method is use to invoke a function directly,
+//by passing in the Reference which points to this variable ,
 //inside the method.
 
 //>>apply:
@@ -20,8 +21,8 @@ let printFullName = function (state) {
   console.log(this.firstName, this.lastName, "from", state);
 };
 
-printFullName.call(name, "maharashtra");
-printFullName.apply(name, ["goa"]);
+printFullName.call(name2, "maharashtra");
+printFullName.apply(name2, ["goa"]);
 
 let print = printFullName.bind(name, "jharkhand");
 print();

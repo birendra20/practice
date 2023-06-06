@@ -1,0 +1,66 @@
+>>To create new database 
+
+1) use assignment
+
+
+>>To create new collection
+
+2) db.createCollection('users')
+
+
+>>To insert one item
+
+3) db.users.insert({"first_name":"Hurlee","last_name":"Pieper","email":"hpieper0@sohu.com","gender":"Male","ip_address":"138.248.80.186","age":"39"})
+
+
+>>To insert multiple items
+
+4) db.users.insertMany([{"first_name":"Abby","last_name":"Garrity","email":"agarrity1@360.cn","gender":"Male","ip_address":"253.111.132.18","age":"73"},
+{"first_name":"Giulietta","last_name":"Dawton","email":"gdawton2@hp.com","gender":"Female","ip_address":"153.244.73.54","age":"16"},
+{"first_name":"Hamish","last_name":"Dibbs","email":"hdibbs3@umich.edu","gender":"Male","ip_address":"113.71.130.110","age":"27"},
+{"first_name":"Page","last_name":"Bench","email":"pbench4@bbc.co.uk","gender":"Female","ip_address":"213.17.161.54","age":"49"},
+{"first_name":"Gwynne","last_name":"Parriss","email":"gparriss5@w3.org","gender":"Male","ip_address":"199.124.101.184","age":"96"},
+{"first_name":"Dulsea","last_name":"Gommowe","email":"dgommowe6@weibo.com","gender":"Female","ip_address":"61.152.58.32","age":"88"},
+{"first_name":"Golda","last_name":"Spearett","email":"gspearett7@archive.org","gender":"Male","ip_address":"28.160.133.167","age":"36"},
+{"first_name":"Brooks","last_name":"Greatreax","email":"bgreatreax8@slideshare.net","gender":"Female","ip_address":"189.169.101.180","age":"32"},
+{"first_name":"Nicolas","last_name":"Romanski","email":"nromanski9@a8.net","gender":"Male","ip_address":"29.249.159.15","age":"95"}])
+
+
+>>To find all the items in JSON format
+
+5) db.users.find({}).pretty()
+
+
+>>To find single item
+
+6) db.users.findOne({"_id" : ObjectId("61a24812c9ca26557397921a")})
+
+
+>>To update single item
+
+7) db.users.update({"_id" : ObjectId("61a24812c9ca26557397921a")}, {$set: {"first_name" : "pablo", "last_name" : "pandey"}})
+
+
+>>To update multiple items
+
+8) db.users.updateMany({"first_name" : "pablo"}, {$set: {"first_name" : "Deepak", "last_name" : "Singh"}})
+
+
+>>To remove single item
+
+9) db.users.deleteOne({"_id" : ObjectId("61a24812c9ca26557397921a")})
+
+
+>>To remove multiple items
+
+10) db.users.remove({"firstName": "pablo"})  || db.users.deleteMany({"firstName": "pablo"})
+
+
+>>To delete the collection
+
+11) db.users.drop()
+
+
+>>To delete the database
+
+12) db.dropDatabase()

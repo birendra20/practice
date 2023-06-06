@@ -12,8 +12,6 @@ let tiger = Object.create(cat);
 
 //tiger.speed = 60;
 
-console.log(tiger); //{}
-
 //hasOwnProperty
 console.log(tiger.hasOwnProperty("speed")); //true
 console.log(tiger.hasOwnProperty("legs")); //false

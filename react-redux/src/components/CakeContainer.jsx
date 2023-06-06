@@ -39,7 +39,7 @@ const mapDispatchToProps = (dispatch) => {
     buyCake: () => dispatch(buyCake()),
   };
 };
-
+console.log("test");
 export default connect(mapStateToProps, mapDispatchToProps)(CakeContainer);
 
 /*
@@ -68,3 +68,24 @@ These functions are used to map the state and dispatch functions to the props of
 The component that is being exported is the connected component with the state and dispatch functions as props.
 
 */
+
+/*
+SUMMARY
+mapStateToProps:
+when you want to access redux state in your component, you define mapStateToProps function
+it gets redux state as a parameter which can be  used to retrieve the appropriate state properties
+in our case , we mapped state.cake.numOfCakes to a prop called a numOfCakes,
+which will then render in the jsx.
+
+ Similarly for dispatching actions we  have mapDispatchToProps function,
+ this function gets the dispatch method as a parameter and allows us to map 
+ action creators to props in  our component.
+
+ in our case, we mapped  dispatching by cake to a prop called byCake
+ this allows us to call by cake as prop.buyCake
+
+and all this was possible because of the connect function  from  a react-redux
+
+
+*/
+  

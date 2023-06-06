@@ -1,0 +1,259 @@
+ show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+mydb    0.000GB
+> use mydb
+switched to db mydb
+> db.dropDatabase()
+{ "ok" : 1 }
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+>
+> use assignment
+switched to db assignment
+> db.createCollection('users')
+{ "ok" : 1 }
+> show dbs
+admin       0.000GB
+assignment  0.000GB
+config      0.000GB
+local       0.000GB
+> show collections
+users
+> db.users.insert({"firstName":"birendra","lastName":"Gupta","email":"hpieper0@sohu.com","gender":"Male","ip_address":"138.248.80.186","age":"39"})
+WriteResult({ "nInserted" : 1 })
+> db.users.find({})
+{ "_id" : ObjectId("61fb437443a50f6c88be259e"), "firstName" : "birendra", "lastName" : "Gupta", "email" : "hpieper0@sohu.com", "gender" : "Male", "ip_address" : "138.248.80.186", "age" : "39" }
+>
+> db.users.insertMany([{"first_name":"Abby","last_name":"Garrity","email":"agarrity1@360.cn","gender":"Male","ip_address":"253.111.132.18","age":"73"},
+... {"first_name":"Giulietta","last_name":"Dawton","email":"gdawton2@hp.com","gender":"Female","ip_address":"153.244.73.54","age":"16"},
+... {"first_name":"Hamish","last_name":"Dibbs","email":"hdibbs3@umich.edu","gender":"Male","ip_address":"113.71.130.110","age":"27"},
+... {"first_name":"Page","last_name":"Bench","email":"pbench4@bbc.co.uk","gender":"Female","ip_address":"213.17.161.54","age":"49"},
+... {"first_name":"Gwynne","last_name":"Parriss","email":"gparriss5@w3.org","gender":"Male","ip_address":"199.124.101.184","age":"96"},
+... {"first_name":"Dulsea","last_name":"Gommowe","email":"dgommowe6@weibo.com","gender":"Female","ip_address":"61.152.58.32","age":"88"},
+... {"first_name":"Golda","last_name":"Spearett","email":"gspearett7@archive.org","gender":"Male","ip_address":"28.160.133.167","age":"36"},
+... {"first_name":"Brooks","last_name":"Greatreax","email":"bgreatreax8@slideshare.net","gender":"Female","ip_address":"189.169.101.180","age":"32"},
+... {"first_name":"Nicolas","last_name":"Romanski","email":"nromanski9@a8.net","gender":"Male","ip_address":"29.249.159.15","age":"95"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("61fb443443a50f6c88be259f"),
+                ObjectId("61fb443443a50f6c88be25a0"),
+                ObjectId("61fb443443a50f6c88be25a1"),
+                ObjectId("61fb443443a50f6c88be25a2"),
+                ObjectId("61fb443443a50f6c88be25a3"),
+                ObjectId("61fb443443a50f6c88be25a4"),
+                ObjectId("61fb443443a50f6c88be25a5"),
+                ObjectId("61fb443443a50f6c88be25a6"),
+                ObjectId("61fb443443a50f6c88be25a7")
+        ]
+}
+> db.users.find({})
+{ "_id" : ObjectId("61fb437443a50f6c88be259e"), "firstName" : "birendra", "lastName" : "Gupta", "email" : "hpieper0@sohu.com", "gender" : "Male", "ip_address" : "138.248.80.186", "age" : "39" }
+{ "_id" : ObjectId("61fb443443a50f6c88be259f"), "first_name" : "Abby", "last_name" : "Garrity", "email" : "agarrity1@360.cn", "gender" : "Male", "ip_address" : "253.111.132.18", "age" : "73" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a0"), "first_name" : "Giulietta", "last_name" : "Dawton", "email" : "gdawton2@hp.com", "gender" : "Female", "ip_address" : "153.244.73.54", "age" : "16" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a1"), "first_name" : "Hamish", "last_name" : "Dibbs", "email" : "hdibbs3@umich.edu", "gender" : "Male", "ip_address" : "113.71.130.110", "age" : "27" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a2"), "first_name" : "Page", "last_name" : "Bench", "email" : "pbench4@bbc.co.uk", "gender" : "Female", "ip_address" : "213.17.161.54", "age" : "49" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a3"), "first_name" : "Gwynne", "last_name" : "Parriss", "email" : "gparriss5@w3.org", "gender" : "Male", "ip_address" : "199.124.101.184", "age" : "96" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a4"), "first_name" : "Dulsea", "last_name" : "Gommowe", "email" : "dgommowe6@weibo.com", "gender" : "Female", "ip_address" : "61.152.58.32", "age" : "88" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a5"), "first_name" : "Golda", "last_name" : "Spearett", "email" : "gspearett7@archive.org", "gender" : "Male", "ip_address" : "28.160.133.167", "age" : "36" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a6"), "first_name" : "Brooks", "last_name" : "Greatreax", "email" : "bgreatreax8@slideshare.net", "gender" : "Female", "ip_address" : "189.169.101.180", "age" : "32" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a7"), "first_name" : "Nicolas", "last_name" : "Romanski", "email" : "nromanski9@a8.net", "gender" : "Male", "ip_address" : "29.249.159.15", "age" : "95" }
+>
+> db.users.find({}).pretty()
+{
+        "_id" : ObjectId("61fb437443a50f6c88be259e"),
+        "firstName" : "birendra",
+        "lastName" : "Gupta",
+        "email" : "hpieper0@sohu.com",
+        "gender" : "Male",
+        "ip_address" : "138.248.80.186",
+        "age" : "39"
+}
+{
+        "_id" : ObjectId("61fb443443a50f6c88be259f"),
+        "first_name" : "Abby",
+        "last_name" : "Garrity",
+        "email" : "agarrity1@360.cn",
+        "gender" : "Male",
+        "ip_address" : "253.111.132.18",
+        "age" : "73"
+}
+{
+        "_id" : ObjectId("61fb443443a50f6c88be25a0"),
+        "first_name" : "Giulietta",
+        "last_name" : "Dawton",
+        "email" : "gdawton2@hp.com",
+        "gender" : "Female",
+        "ip_address" : "153.244.73.54",
+        "age" : "16"
+}
+{
+        "_id" : ObjectId("61fb443443a50f6c88be25a1"),
+        "first_name" : "Hamish",
+        "last_name" : "Dibbs",
+        "email" : "hdibbs3@umich.edu",
+        "gender" : "Male",
+        "ip_address" : "113.71.130.110",
+        "age" : "27"
+}
+{
+        "_id" : ObjectId("61fb443443a50f6c88be25a2"),
+        "first_name" : "Page",
+        "last_name" : "Bench",
+        "email" : "pbench4@bbc.co.uk",
+        "gender" : "Female",
+        "ip_address" : "213.17.161.54",
+        "age" : "49"
+}
+{
+        "_id" : ObjectId("61fb443443a50f6c88be25a3"),
+        "first_name" : "Gwynne",
+        "last_name" : "Parriss",
+        "email" : "gparriss5@w3.org",
+        "gender" : "Male",
+        "ip_address" : "199.124.101.184",
+        "age" : "96"
+}
+{
+        "_id" : ObjectId("61fb443443a50f6c88be25a4"),
+        "first_name" : "Dulsea",
+        "last_name" : "Gommowe",
+        "email" : "dgommowe6@weibo.com",
+        "gender" : "Female",
+        "ip_address" : "61.152.58.32",
+        "age" : "88"
+}
+{
+        "_id" : ObjectId("61fb443443a50f6c88be25a5"),
+        "first_name" : "Golda",
+        "last_name" : "Spearett",
+        "email" : "gspearett7@archive.org",
+        "gender" : "Male",
+        "ip_address" : "28.160.133.167",
+        "age" : "36"
+}
+{
+        "_id" : ObjectId("61fb443443a50f6c88be25a6"),
+        "first_name" : "Brooks",
+        "last_name" : "Greatreax",
+        "email" : "bgreatreax8@slideshare.net",
+        "gender" : "Female",
+        "ip_address" : "189.169.101.180",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("61fb443443a50f6c88be25a7"),
+        "first_name" : "Nicolas",
+        "last_name" : "Romanski",
+        "email" : "nromanski9@a8.net",
+        "gender" : "Male",
+        "ip_address" : "29.249.159.15",
+        "age" : "95"
+}
+> db.users.FindOne({"firstName":"birendra"})
+uncaught exception: TypeError: db.users.FindOne is not a function :
+@(shell):1:1
+>
+> db.users.Findone({"firstName":"birendra"})
+uncaught exception: TypeError: db.users.Findone is not a function :
+@(shell):1:1
+> db.users.FindOne({"firstName":"birendra"})db.users.FindOne({"firstName":"birendra"})db.users.FindOne({"firstName":"birendra"})
+uncaught exception: SyntaxError: unexpected token: identifier :
+@(shell):1:42
+> db.users.findOne({"firstName":"birendra"})
+{
+        "_id" : ObjectId("61fb437443a50f6c88be259e"),
+        "firstName" : "birendra",
+        "lastName" : "Gupta",
+        "email" : "hpieper0@sohu.com",
+        "gender" : "Male",
+        "ip_address" : "138.248.80.186",
+        "age" : "39"
+}
+> db.users.FindOne({"firstName":"birendra"})db.users.FindOne({"firstName":"birendra"})
+uncaught exception: SyntaxError: unexpected token: identifier :
+@(shell):1:42
+>
+> db.users.FindOne({"firstName":"birendra"})db.users.FindOne({"firstName":"birendra"})
+uncaught exception: SyntaxError: unexpected token: identifier :
+@(shell):1:42
+>
+> db.users.update({
+...
+...
+>
+> db.users.update({db.users.update({db.users.update({
+...
+...
+>
+> ObjectId("61fb437443a50f6c88be259e"),
+...
+...
+> db.users.update({"_id" : ObjectId("61fb437443a50f6c88be259e"},{$set:{"firstName":"pablo"}})
+...
+...
+> db.users.update({"_id" : ObjectId("61fb437443a50f6c88be259e")},{$set:{"firstName":"pablo"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.users.find({})
+{ "_id" : ObjectId("61fb437443a50f6c88be259e"), "firstName" : "pablo", "lastName" : "Gupta", "email" : "hpieper0@sohu.com", "gender" : "Male", "ip_address" : "138.248.80.186", "age" : "39" }
+{ "_id" : ObjectId("61fb443443a50f6c88be259f"), "first_name" : "Abby", "last_name" : "Garrity", "email" : "agarrity1@360.cn", "gender" : "Male", "ip_address" : "253.111.132.18", "age" : "73" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a0"), "first_name" : "Giulietta", "last_name" : "Dawton", "email" : "gdawton2@hp.com", "gender" : "Female", "ip_address" : "153.244.73.54", "age" : "16" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a1"), "first_name" : "Hamish", "last_name" : "Dibbs", "email" : "hdibbs3@umich.edu", "gender" : "Male", "ip_address" : "113.71.130.110", "age" : "27" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a2"), "first_name" : "Page", "last_name" : "Bench", "email" : "pbench4@bbc.co.uk", "gender" : "Female", "ip_address" : "213.17.161.54", "age" : "49" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a3"), "first_name" : "Gwynne", "last_name" : "Parriss", "email" : "gparriss5@w3.org", "gender" : "Male", "ip_address" : "199.124.101.184", "age" : "96" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a4"), "first_name" : "Dulsea", "last_name" : "Gommowe", "email" : "dgommowe6@weibo.com", "gender" : "Female", "ip_address" : "61.152.58.32", "age" : "88" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a5"), "first_name" : "Golda", "last_name" : "Spearett", "email" : "gspearett7@archive.org", "gender" : "Male", "ip_address" : "28.160.133.167", "age" : "36" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a6"), "first_name" : "Brooks", "last_name" : "Greatreax", "email" : "bgreatreax8@slideshare.net", "gender" : "Female", "ip_address" : "189.169.101.180", "age" : "32" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a7"), "first_name" : "Nicolas", "last_name" : "Romanski", "email" : "nromanski9@a8.net", "gender" : "Male", "ip_address" : "29.249.159.15", "age" : "95" }
+>
+>
+> db.users.updateMany({"firstName" : "pablo"},{$set:{"religion":"hindu"}})
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+>
+>  db.users.FindOne({"firstName":"birendra"})
+uncaught exception: TypeError: db.users.FindOne is not a function :
+@(shell):1:1
+> db.users.findOne({"firstName":"birendra"})
+null
+> db.users.findOne({"firstName":"pablo"})
+{
+        "_id" : ObjectId("61fb437443a50f6c88be259e"),
+        "firstName" : "pablo",
+        "lastName" : "Gupta",
+        "email" : "hpieper0@sohu.com",
+        "gender" : "Male",
+        "ip_address" : "138.248.80.186",
+        "age" : "39",
+        "religion" : "hindu"
+}
+> db.users.deleteOne({"_id" : ObjectId("61fb437443a50f6c88be259e")})
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.users.find({})
+{ "_id" : ObjectId("61fb443443a50f6c88be259f"), "first_name" : "Abby", "last_name" : "Garrity", "email" : "agarrity1@360.cn", "gender" : "Male", "ip_address" : "253.111.132.18", "age" : "73" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a0"), "first_name" : "Giulietta", "last_name" : "Dawton", "email" : "gdawton2@hp.com", "gender" : "Female", "ip_address" : "153.244.73.54", "age" : "16" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a1"), "first_name" : "Hamish", "last_name" : "Dibbs", "email" : "hdibbs3@umich.edu", "gender" : "Male", "ip_address" : "113.71.130.110", "age" : "27" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a2"), "first_name" : "Page", "last_name" : "Bench", "email" : "pbench4@bbc.co.uk", "gender" : "Female", "ip_address" : "213.17.161.54", "age" : "49" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a3"), "first_name" : "Gwynne", "last_name" : "Parriss", "email" : "gparriss5@w3.org", "gender" : "Male", "ip_address" : "199.124.101.184", "age" : "96" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a4"), "first_name" : "Dulsea", "last_name" : "Gommowe", "email" : "dgommowe6@weibo.com", "gender" : "Female", "ip_address" : "61.152.58.32", "age" : "88" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a5"), "first_name" : "Golda", "last_name" : "Spearett", "email" : "gspearett7@archive.org", "gender" : "Male", "ip_address" : "28.160.133.167", "age" : "36" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a6"), "first_name" : "Brooks", "last_name" : "Greatreax", "email" : "bgreatreax8@slideshare.net", "gender" : "Female", "ip_address" : "189.169.101.180", "age" : "32" }
+{ "_id" : ObjectId("61fb443443a50f6c88be25a7"), "first_name" : "Nicolas", "last_name" : "Romanski", "email" : "nromanski9@a8.net", "gender" : "Male", "ip_address" : "29.249.159.15", "age" : "95" }
+>
+> db.users.drop()
+true
+> show collection
+uncaught exception: Error: don't know how to show [collection] :
+shellHelper.show@src/mongo/shell/utils.js:1211:11
+shellHelper@src/mongo/shell/utils.js:838:15
+@(shellhelp2):1:1
+> show collections
+>
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+>
